@@ -1,0 +1,1155 @@
+
+<!-- Change Log
+ 05/17/04 Cyders: Added conditional server execution of leftsubnav
+ 05/17/04 Cyders: Raised left nav on page, by reducing top value of Layer1 from 98 to 58.
+-->
+
+<html>
+<head>
+<title>County Of Marin:  Public Booking Log</title>
+<link rel="stylesheet" href="/globals/marin.css" type="text/css">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<META NAME="Keywords" CONTENT="">
+<META NAME="Description" CONTENT="">
+<META NAME="Date" CONTENT="2014-03-25">
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function GP_AdvOpenWindow(theURL,winName,features,popWidth,popHeight,winAlign,ignorelink,alwaysOnTop,autoCloseTime,borderless) { //v2.0
+  var leftPos=0,topPos=0,autoCloseTimeoutHandle, ontopIntervalHandle, w = 480, h = 340;
+  if (popWidth > 0) features += (features.length > 0 ? ',' : '') + 'width=' + popWidth;
+  if (popHeight > 0) features += (features.length > 0 ? ',' : '') + 'height=' + popHeight;
+  if (winAlign && winAlign != "" && popWidth > 0 && popHeight > 0) {
+    if (document.all || document.layers || document.getElementById) {w = screen.availWidth; h = screen.availHeight;}
+		if (winAlign.indexOf("center") != -1) {topPos = (h-popHeight)/2;leftPos = (w-popWidth)/2;}
+		if (winAlign.indexOf("bottom") != -1) topPos = h-popHeight; if (winAlign.indexOf("right") != -1) leftPos = w-popWidth;
+		if (winAlign.indexOf("left") != -1) leftPos = 0; if (winAlign.indexOf("top") != -1) topPos = 0;
+    features += (features.length > 0 ? ',' : '') + 'top=' + topPos+',left='+leftPos;}
+  if (document.all && borderless && borderless != "" && features.indexOf("fullscreen") != -1) features+=",fullscreen=1";
+  if (window["popupWindow"] == null) window["popupWindow"] = new Array();
+  var wp = popupWindow.length;
+  popupWindow[wp] = window.open(theURL,winName,features);
+  if (popupWindow[wp].opener == null) popupWindow[wp].opener = self;
+  if (document.all || document.layers || document.getElementById) {
+    if (borderless && borderless != "") {popupWindow[wp].resizeTo(popWidth,popHeight); popupWindow[wp].moveTo(leftPos, topPos);}
+    if (alwaysOnTop && alwaysOnTop != "") {
+    	ontopIntervalHandle = popupWindow[wp].setInterval("window.focus();", 50);
+    	popupWindow[wp].document.body.onload = function() {window.setInterval("window.focus();", 50);}; }
+    if (autoCloseTime && autoCloseTime > 0) {
+    	popupWindow[wp].document.body.onbeforeunload = function() {
+  			if (autoCloseTimeoutHandle) window.clearInterval(autoCloseTimeoutHandle);
+    		window.onbeforeunload = null;	}
+   		autoCloseTimeoutHandle = window.setTimeout("popupWindow["+wp+"].close()", autoCloseTime * 1000); }
+  	window.onbeforeunload = function() {for (var i=0;i<popupWindow.length;i++) popupWindow[i].close();}; }
+  document.MM_returnValue = (ignorelink && ignorelink != "") ? false : true;
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+//-->
+</script>
+
+<!--Google Analytics Asynchronous code.  Placed as the last script in the /head section of the page.  12-29-09  chc-->
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-12232556-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</head>
+
+
+
+<script language="JavaScript">
+<!--
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+//-->
+</script>
+<script language="JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+// -->
+</script>
+
+<style type="text/css">
+	<!--
+	body { 	background-image:  url(/SiteImages_NEW/blue_bg_04.JPG);
+			background-repeat: no-repeat}
+.style2 {
+	color: #FFFFFF;
+	font-size: xx-small;
+}
+.style3 {color: #FFFFFF}
+	-->
+</style>
+<body bgcolor="FFFFFF" text="000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onLoad="MM_preloadImages('/SiteImages/blue_translate_roll.gif','/siteImages/blue_translate.gif','/siteImages/blue_bg.jpg','/siteImages/blue_image.jpg','/siteImages/b_grade.jpg','/siteImages/blue_bg_topleft.jpg','/siteImages/blue_bg_left.jpg','../siteimages_NEW/espan_ov.gif')">
+<div id="Layer1" style="position:absolute; left:-2px; top:50px; width:150px; height:258px; z-index:6; background-color: #3A6691; layer-background-color: #3A6691; border: 1px none #000000;">
+  <table width="149" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td rowspan="36" width="10">&nbsp;</td>
+      <td height="12"></td>
+    </tr>
+    <tr>
+      <td><a href="/default.asp" class="subglobalnav">COUNTY
+          HOME</a></td>
+    </tr>
+    <tr>
+      <td height="16">
+&nbsp;
+        
+      </td>
+    </tr>
+    <tr>
+      <td><a href="/depts/BS/main/index.cfm" class="subglobalnav">BOARD OF
+          SUPERVISORS</a></td>
+    </tr>
+    <tr>
+      <td height="08"><img src="/SiteImages/shim.gif" width="1" height="08" alt="Marin County"></td>
+    </tr>
+    <tr>
+      <td><a href="/sysApps/Contacts/SearchContacts.aspx" class="subglobalnav">CONTACTS</a></td>
+    </tr>
+    <tr>
+      <td height="08"><img src="/SiteImages/shim.gif" width="1" height="08" alt="Marin County"></td>
+    </tr>
+    <tr>
+      <td><a href="/nav/OrgIndex.cfm" class="subglobalnav">DEPARTMENTS</a></td>
+    </tr>
+    <tr>
+      <td><img src="/SiteImages/shim.gif" width="1" height="08" alt="Marin County"></td>
+    </tr>
+    <tr>
+      <td><a href="/depts/hr/jobs/default.asp" class="subglobalnav">JOB POSTINGS</a></td>
+    </tr>
+    <tr>
+      <td><img src="/SiteImages/shim.gif" width="1" height="08" alt="Marin County"></td>
+    </tr>
+    <tr>
+      <td><a href="/sysApps/MyMarin/login.asp" class="subglobalnav">MY
+          MARIN</a></td>
+    </tr>
+    <tr>
+      <td height="08"><img src="/SiteImages/shim.gif" width="1" height="08" alt="Marin County"></td>
+    </tr>
+    <tr>
+      <td><a href="/nav/ServiceList.cfm" class="subglobalnav">SERVICES &amp; INFORMATION</a></td>
+    </tr>
+    <tr>
+      <td height="20"><img src="/SiteImages/shim.gif" width="1" height="20" alt="Marin County"></td>
+    </tr>
+    <tr>
+      <td><a href="/nav/ClusterList.cfm?GA=1" class="subglobalnav"><strong>DOING
+            BUSINESS</strong></a></td>
+    </tr>
+    <tr>
+      <td height="08"><img src="/SiteImages/shim.gif" width="1" height="08" alt="Marin County"></td>
+    </tr>
+    <tr>
+      <td><a href="/nav/ClusterList.cfm?GA=2" class="subglobalnav"><strong>GOVERNMENT</strong></a></td>
+    </tr>
+    <tr>
+      <td height="08"><img src="/SiteImages/shim.gif" width="1" height="08" alt="Marin County"></td>
+    </tr>
+    <tr>
+      <td><a href="/nav/ClusterList.cfm?GA=3" class="subglobalnav"><strong>LIVING
+            HERE</strong></a></td>
+    </tr>
+    <tr>
+      <td height="08"><img src="/SiteImages/shim.gif" width="1" height="08" alt="Marin County"></td>
+    </tr>
+    <tr>
+      <td><a href="/nav/ClusterList.cfm?GA=4" class="subglobalnav"><strong>ONLINE
+            SERVICES</strong></a></td>
+    </tr>
+    <tr>
+      <td height="08"><img src="/SiteImages/shim.gif" width="1" height="08" alt="Marin County"></td>
+    </tr>
+    <tr>
+      <td><a href="/nav/ClusterList.cfm?GA=5" class="subglobalnav"><strong>VISITING</strong></a></td>
+    </tr>
+    <tr>
+      <td height="20"><img src="/SiteImages/shim.gif" width="1" height="20" alt="Marin County"></td>
+    </tr>
+    <tr>
+      <td><a href="/sysapps/Calendar/index.cfm" class="subsidenav">Calendar</a></td>
+    </tr>
+    <tr>
+      <td height="02"><img src="/SiteImages/shim.gif" width="1" height="02" alt="Marin County"></td>
+    </tr>
+    <tr>
+      <td><a href="/nav/NewsList.cfm" class="subsidenav">County News</a></td>
+    </tr>
+    <tr>
+      <td height="02"><img src="/SiteImages/shim.gif" width="1" height="02" alt="marin county"></td>
+    </tr>
+    <tr>
+      <td><a href="/nav/formlist.cfm" class="subsidenav">Forms</a></td>
+    </tr>
+    <tr>
+      <td height="02"><img src="/SiteImages/shim.gif" width="1" height="02" alt="marin county"></td>
+    </tr>
+    <tr>
+      <td><a href="/nav/Fulltext.html" class="subsidenav">Full
+          Text Search</a></td>
+    </tr>
+    <tr>
+      <td height="02"><img src="/SiteImages/shim.gif" width="1" height="02" alt="marin county"></td>
+    </tr>
+    <tr>
+      <td><a href="" class="subsidenav" onClick="GP_AdvOpenWindow('http://www.govdocs.com/GovDocs/multi_subscribe.html?code=CAMARIN','','fullscreen=no,toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=yes',515,500,'center','ignoreLink','',0,'');return document.MM_returnValue">Subscribe</a></td>
+    </tr>
+    <tr>
+      <td height="02"><img src="/SiteImages/shim.gif" width="1" height="02" alt="marin county"></td>
+    </tr>
+    <!---
+    <tr>
+      <td><a href="http://www.marincounty.org/Main/Survey" class="subsidenav">Give
+          Us Feedback</a></td>
+    </tr>
+    --->
+    <tr>
+      <td height="02"><img src="/SiteImages/shim.gif" width="1" height="02" alt="marin county"></td>
+    </tr>
+    
+  </table>
+</div>
+<div id="Layer1" style="position:absolute; left:175px; top:49px; width:71px; height:94px; z-index:1; background-color: white; layer-background-color: white; overflow: visible">
+  
+  <img src="/depts/so/main/images/smdoyle.jpg" width="72" height="94" border="0" alt="Photo of Robert T. Doyle, Marin County Sheriff">
+  
+</div>
+
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function KW_autoClear(obj,def){
+	if (obj.value==def) obj.value=""
+}
+//-->
+</script>
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0" height="48">
+  <tr>
+    <td width="64" height="48"><img src="/siteimages_NEW/blue_shim.gif" alt="Marin County" width="63" height="48"><img src="/siteImages/shim.gif" alt="Marin County" width="1" height="1"></td>
+    <td valign="middle" class="subtitle" height="48" nowrap width="239">COUNTY
+      OF MARIN</td>
+    <td width="247" height="48" valign="top"><img src="/SiteImages/sub_tagline.gif"
+   		width="210" height="44" class="subtitle" alt="our mission is excellent service"></td>
+    <td width="134">
+	<td height="48" width="30"><div id="Layer10" style="position:absolute; width:74px; height:20px; z-index:16; left: 683px; top: -215px;">
+      <table border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td valign="bottom"><table border="0" cellpadding="0" cellspacing="0">
+              <tr>
+                <td width=""><input type="hidden" value="en_es" name="lp">
+                    <input type="hidden" name="urltext" value="http://www.co.marin.ca.us">
+                    <input type="image" name="Image1" onMouseOut="MM_swapImgRestore()"
+						onMouseOver="MM_swapImage('Image1','','/siteimages_NEW/espan_ov.gif',1)"
+						src="/siteImages_NEW/espan.gif" border="0"
+						alt="Click here to translate this page into Spanish">
+                </td>
+              </tr>
+            </table>
+      </table>
+    </div>
+
+
+	<td width="269" nowrap>&nbsp;</td>
+  </tr>
+</table>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+  <td>&nbsp;</td>
+  <td width="100%" bgcolor="3A6691" valign="top">
+    <table width="100%" cellpadding="0" cellspacing="0" border="0">
+      <tr>
+        <td width="110" bgcolor="6699CC"><img src="/SiteImages/shim.gif"
+			width="110" height="1" alt="Marin County"></td>
+        <td bgcolor="6699CC" valign="middle" class="dephead" nowrap width="100%">
+           Public Booking Log</td>
+        <td width="300" valign="top"><img src="/SiteImages/b_grade.jpg"
+			width="300" height="30" alt="Marin County"></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+  <td width="149" valign="top" bgcolor="3A6691"><img src="/SiteImages/blue_bg_topleft.jpg" width="149" height="64" alt="Marin County"><img src="/SiteImages/blue_bg_left.jpg" width="149" height="236" alt="marin county"></td>
+  <td valign="top" width="100%"> <table width="100%" height="460" cellpadding="0" cellspacing="0" border="0">
+    <tr>
+      <td width="25"><img src="/SiteImages/shim.gif" width="25" height="1" alt="Marin County"></td>
+      <td width="100%" valign="top" height="15">
+        <div id="Layer10" style="position:absolute; width:74px; height:20px; z-index:16; left: 683px; top: -215px;">
+          <table border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td valign="bottom"><table border="0" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td width=""><input type="hidden" value="en_es" name="lp">
+                        <input type="hidden" name="urltext" value="http://www.co.marin.ca.us">
+                        <input type="image" name="Image1" onMouseOut="MM_swapImgRestore()"
+						onMouseOver="MM_swapImage('Image1','','/siteimages_NEW/translate_ov.jpg',1)"
+						src="/siteImages_NEW/translate.jpg" alt="Translate" name="translate" onClick="javascript:window.location='http://www.google.com/translate_c?hl=en&langpair=en%7CES&u=' + window.location.href;" border="0"
+						alt="Click here to translate this page into Spanish">
+                    </td>
+                  </tr>
+                </table>
+          </table>
+        </div>
+        <div id="Layer10" style="position:absolute; width:74px; height:20px; z-index:16; left: 683px; top: -215px;">
+          <table border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td valign="bottom"><table border="0" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td width=""><input type="hidden" value="en_es" name="lp">
+                        <input type="hidden" name="urltext" value="http://www.co.marin.ca.us">
+                        <input type="image" name="Image1" onMouseOut="MM_swapImgRestore()"
+						onMouseOver="MM_swapImage('Image1','','siteimages_NEW/translate_ov.jpg',1)"
+						src="/siteImages_NEW/translate.jpg" alt="Translate" name="translate" onClick="javascript:window.location='http://www.google.com/translate_c?hl=en&langpair=en%7CES&u=' + window.location.href;" border="0"
+						alt="Click here to translate this page into Spanish">
+                    </td>
+                  </tr>
+                </table>
+          </table>
+        </div>
+        <div id="Layer5" style="position:absolute; width:148px; height:23px; z-index:1; left: 707px; top: -5px;">
+          <table width="100%"  border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td valign="top" value="Search Our Site"><form action="/nav/KeywordList.cfm" method="post" name="keyword_form">
+                  <LABEL for="Key_word"><span class="style3">Enter Keyword</span></LABEL>
+                  <span class="style3"> to</span>
+                  <input name="key_word" type="text" id="key_word" onFocus="KW_autoClear(this,'Search Our Site')" value="Search Our Site">
+                  <div id="Layer11" style="position:absolute; width:26px; height:22px; z-index:16; left: 151px; top: 21px;"><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('GO','','/siteimages_NEW/go_over.gif',1)">
+                    <input type=IMAGE src="/siteimages_NEW/go.gif" name=GO border="0" alt="GO BUTTON: Click here to start your Keyword Search" width="20" height="20">
+                  </a></div>
+                  <a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('GO','','siteimages_NEW/go_over.gif',1)"> </a>
+              </form></td>
+            </tr>
+          </table>
+        </div>
+        <div id="Layer2" style="position:absolute; width:160px; height:24px; z-index:17; left: 620px; top: 16px;">
+          <!-- <form action="http://w4.systranlinks.com/trans" method="post" name="formtranslate" target="_New">
+            <input type="hidden" name="urltext" value="egovwebprod.marincounty.org/depts/SO/bklog/XMLProj/BookResults.asp">
+            <input type="hidden" value="en_es" name="lp">
+            <input type="hidden" value="en_es" name="lp">
+            <input type="hidden" name="urltext" value="http://www.co.marin.ca.us"> -->
+            <input type="image" img src="/siteImages_NEW/translate.jpg" alt="Translate" name="translate" onClick="javascript:window.location='http://www.google.com/translate_c?hl=en&langpair=en%7CES&u=' + window.location.href;" alt="Click to Translate" name="Image29" width="73" height="20" border="0" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image29','','/siteimages_NEW/translate_ov.jpg',1)">
+         <!-- </form> -->
+        </div>
+        <table width="100%" border="0" cellpadding="0" cellspacing="0" value="Search Our Site">
+          <tr>
+            <td width="85"><img src="/SiteImages/shim.gif" width="85" height="1" alt="Marin County"></td>
+            <td valign="top">
+              
+              <A HREF="/depts/SO/main/index.cfm"
+		class="bluesubnavb"><b>Home</b></a>&nbsp;&nbsp; <A HREF=""
+		class="bluesubnavb"><b>Contact Us</b></a>&nbsp;&nbsp; <A HREF="/nav/ServiceList.cfm?ServDeptCd=SO"
+		class="bluesubnavb"><b>Services</b></a>&nbsp;&nbsp; <A HREF="/nav/DeptList.cfm?ServDeptCd=SO"
+		class="bluesubnavb"><b>Organization</b></a>&nbsp;&nbsp; <A HREF="/nav/formlist.cfm?ServDeptCd=SO"
+		class="bluesubnavb"><b>Forms</b></a>&nbsp;&nbsp; <A HREF="/nav/NewsList.cfm?ServDeptCd=SO"
+		class="bluesubnavb"><b>News</b></a>&nbsp;&nbsp; <A HREF="/depts/HR/jobs/default.asp?ServDeptCd=SO"
+		class="bluesubnavb"><b>Jobs</b></a>&nbsp;&nbsp;
+		
+		<br>
+              <table width="600" cellpadding="0" cellspacing="0" border="0">
+<tr>
+<!--	<td>
+	<span class="EGOVsubnavb">Bureaus:</span>
+	<span class="bluebottomnav">
+	<a href="/depts/SO/main/admin_svc.cfm"
+		class="bluesubnav">Admin & Support Services</a> &nbsp;|&nbsp;
+	<a href="/depts/SO/main/det_svc.cfm"
+		class="bluesubnav">Detention Services</a> &nbsp;|&nbsp;
+	<a href="/depts/SO/main/field_svc.cfm"
+		class="bluesubnav">Field Services</a> &nbsp;|&nbsp;
+	<a href="/depts/SO/main/misc_page.cfm"
+		class="bluesubnav">Miscellaneous</a>
+	</span>
+	</td>
+</tr>
+<tr><td height="4"></td></tr>
+<tr>
+	<td>
+	<span class="bluebottomnav">
+	<a href="/depts/SO/main//contact_us.cfm"
+		class="bluesubnav">Contact Sheriff's Personnel</a> &nbsp;|&nbsp;
+	<a href="/depts/SO/main/faqs.cfm"
+		class="bluesubnav">Frequently Asked Questions</a> &nbsp;|&nbsp;
+	<a href="/depts/SO/main/index.cfm#homesitemap"
+		class="bluesubnav">Site Map</a>
+	</span>
+		</td>
+</tr>
+<tr><td height="4"></td></tr>
+<tr>
+	<td>
+	</td> -->
+</tr>
+
+
+</table>
+            </td>
+          </tr>
+        </table>
+        
+<!-- ***************************************************************************
+Note: The code below was put in to force a longer page when
+		a leftsubnav was present. For now this will be
+		removed as most asp pages don't use the leftsubnav.
+		The rest of this table was commented out in the BottomEgov.asp
+
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+	<td height="450" valign="top">
+     ***************************************************************************
+-->
+
+        <!--   Note: This ends in an open cell.
+		That allows the calling page to include content
+		within that cell.
+-->
+
+<script language="Javascript">
+<!--
+if (document.all) {
+     for (var i=0;i < document.all.length ; i++) {
+          document.all(i).style.cursor = 'default';
+          }
+	}
+-->
+</script>
+<!-- START GOOGLE ANALYTICS -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-10628468-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script>
+<!-- END GOOGLE ANALYTICS -->
+
+<TABLE width="620">
+<!--<TR>
+    <TD colspan="6"><hr align="left" width="100%" size="3" color="008000" />
+    </TD>
+</TR>-->
+
+
+	<tr><td colspan=6><hr align=left width=100% size=3 color=008000></td></tr>
+	   
+	   <tr><td width=6%>&nbsp;</td><td class=head width=12%>Name</td>
+	   
+	     <td width=35% class=subbody>TESTERSON, TESTY MAC</td>
+	     <td class=head nowrap width=17%>Orig Booking Date</td>
+	     <td width=30% class=subbody>8/28/2014 10:00:00 AM</td></tr>
+	<tr><td>&nbsp;</td><td class=head>Address</td><td class=subbody>SAN RAFAEL CA</td>
+	<td class=head nowrap>Latest Charge Date </td>
+	<td class=subbody>8/28/2014 10:29:00 AM</td></tr>
+	<tr><td>&nbsp;</td><td class=head nowrap>Sex</td><td class=subbody>M
+
+	</td>
+	 <td class=head nowrap>Arrest Date</td>
+	 <td class=subbody nowrap>8/28/2014 10:12:00 AM</td>
+	</tr>
+	<tr><td>&nbsp;</td><td class=head nowrap>Date of Birth</td><td class=subbody>
+	4/21/1995</td>
+	 <td class=head nowrap>Arrest Agency</td>
+	 <td class=subbody>Central Marin Police Authority</td>
+	</tr>
+	<!-- Newly added booking info -->
+	<tr><td>&nbsp;</td><td class=head nowrap>Occupation</td><td class=subbody>LONGSHOREMAN
+
+		</td>
+		 <td class=head nowrap>Arrest Location</td>
+		 <td class=subbody nowrap>1030 SIR FRANCIS DRAKE BL, S.A.</td>
+	</tr>
+	<tr><td>&nbsp;</td><td class=head nowrap>Height</td><td class=subbody>5' 11"
+
+		</td>
+		 <td class=head nowrap>Hair Color</td>
+		 <td class=subbody nowrap>BRO</td>
+	</tr>
+	<tr><td>&nbsp;</td><td class=head nowrap>Weight</td><td class=subbody>215
+
+		</td>
+		 <td class=head nowrap>Eye Color</td>
+		 <td class=subbody nowrap>BLU</td>
+	</tr>
+
+	<tr><td>&nbsp;</td><td class=head nowrap>Jail Id</td><td class=subbody>P00126267
+
+				</td>
+	</tr>
+
+	 <tr><td>&nbsp;</td><td colspan=5><hr align=center width=100% size=1 color=008080></td></tr>
+
+	<tr><td>&nbsp;</td><td width=12%><font size="2" face="Arial, Helvetica, sans-serif"><b>Charges</b></font></td>
+	<td class=subbody>&nbsp;</td>
+	<td class=subbody>&nbsp;</td>
+	<td><font size="2" face="Arial, Helvetica, sans-serif"><b>Bail</b></font></td>
+	<td><font size="2" face="Arial, Helvetica, sans-serif"><b>Charge Authority</b></font></td>
+	</tr>
+	<tr><td>&nbsp;</td><td width=12% class=subbody nowrap>646.9(A) PC</td>
+	<td class=subbody>Stalking                            </td>
+	<td class=subbody>F</font></td>
+	<td class=subbody>$52,000.00</font></td>
+	<td class=subbody>*Bench warrant</td>
+	</tr>
+	<tr><td>&nbsp;</td><td width=12% class=subbody>466 PC</td>
+	     <td class=subbody>Possession burglary tools           </td>
+	      <td class=subbody>M</td>
+	     <td class=subbody></td>
+	     <td class=subbody>Open charges</td>
+	 </tr>
+
+	     <tr><td colspan=6 align=center><a class=bluelinkunder href="http://egovwebprod.marincounty.org/depts/MC/courtcal/bookinglog.cfm?name=KINGSMAN, JACK ANDERSEN" class=bluelinkunder>View Court Appearance</a></td></tr>
+	   
+	<tr><td colspan=6><hr align=left width=100% size=3 color=008000></td></tr>
+	   
+	   <tr><td width=6%>&nbsp;</td><td class=head width=12%>Name</td>
+	   
+	     <td width=35% class=subbody>AGREGADO, GERRADO BUNAG</td>
+	     <td class=head nowrap width=17%>Orig Booking Date</td>
+	     <td width=30% class=subbody>8/18/2014 4:15:00 PM</td></tr>
+	<tr><td>&nbsp;</td><td class=head>Address</td><td class=subbody>ALMONTE CA</td>
+	<td class=head nowrap>Latest Charge Date </td>
+	<td class=subbody>8/18/2014 4:34:00 PM</td></tr>
+	<tr><td>&nbsp;</td><td class=head nowrap>Sex</td><td class=subbody>M
+
+	</td>
+	 <td class=head nowrap>Arrest Date</td>
+	 <td class=subbody nowrap>8/18/2014 2:25:00 PM</td>
+	</tr>
+	<tr><td>&nbsp;</td><td class=head nowrap>Date of Birth</td><td class=subbody>
+	5/23/1956</td>
+	 <td class=head nowrap>Arrest Agency</td>
+	 <td class=subbody>Mill Valley PD</td>
+	</tr>
+	<!-- Newly added booking info -->
+	<tr><td>&nbsp;</td><td class=head nowrap>Occupation</td><td class=subbody>LIMO DRIVER
+
+		</td>
+		 <td class=head nowrap>Arrest Location</td>
+		 <td class=subbody nowrap>95 VASCO CT</td>
+	</tr>
+	<tr><td>&nbsp;</td><td class=head nowrap>Height</td><td class=subbody>5' 06"
+
+		</td>
+		 <td class=head nowrap>Hair Color</td>
+		 <td class=subbody nowrap>BLK</td>
+	</tr>
+	<tr><td>&nbsp;</td><td class=head nowrap>Weight</td><td class=subbody>130
+
+		</td>
+		 <td class=head nowrap>Eye Color</td>
+		 <td class=subbody nowrap>BRO</td>
+	</tr>
+
+	<tr><td>&nbsp;</td><td class=head nowrap>Jail Id</td><td class=subbody>P00211277
+
+				</td>
+	</tr>
+
+	 <tr><td>&nbsp;</td><td colspan=5><hr align=center width=100% size=1 color=008080></td></tr>
+
+	<tr><td>&nbsp;</td><td width=12%><font size="2" face="Arial, Helvetica, sans-serif"><b>Charges</b></font></td>
+	<td class=subbody>&nbsp;</td>
+	<td class=subbody>&nbsp;</td>
+	<td><font size="2" face="Arial, Helvetica, sans-serif"><b>Bail</b></font></td>
+	<td><font size="2" face="Arial, Helvetica, sans-serif"><b>Charge Authority</b></font></td>
+	</tr>
+	<tr><td>&nbsp;</td><td width=12% class=subbody nowrap>422 PC</td>
+	<td class=subbody>Threaten crime to terrorize         </td>
+	<td class=subbody>F</font></td>
+	<td class=subbody>$100,000.00</font></td>
+	<td class=subbody>Open charges</td>
+	</tr>
+
+	<tr><td>&nbsp;</td><td width=12% class=subbody>422 PC</td>
+	     <td class=subbody>Threaten crime to terrorize         </td>
+	      <td class=subbody>F</td>
+	     <td class=subbody>$100,000.00</td>
+	     <td class=subbody>Open charges</td>
+	 </tr>
+
+	<tr><td>&nbsp;</td><td width=12% class=subbody>487(D)(2) PC</td>
+	     <td class=subbody>Grand thft firearm w/ser fel enhanc </td>
+	      <td class=subbody>F</td>
+	     <td class=subbody></td>
+	     <td class=subbody>Open charges</td>
+	 </tr>
+
+	<tr><td>&nbsp;</td><td width=12% class=subbody>487(D)(2) PC</td>
+	     <td class=subbody>Grand thft firearm w/ser fel enhanc </td>
+	      <td class=subbody>F</td>
+	     <td class=subbody></td>
+	     <td class=subbody>Open charges</td>
+	 </tr>
+
+	     <tr><td colspan=6 align=center><a class=bluelinkunder href="http://egovwebprod.marincounty.org/depts/MC/courtcal/bookinglog.cfm?name=AGREGADO, GERRADO BUNAG" class=bluelinkunder>View Court Appearance</a></td></tr>
+	   
+	<tr><td colspan=6><hr align=left width=100% size=3 color=008000></td></tr>
+	   
+	   <tr><td width=6%>&nbsp;</td><td class=head width=12%>Name</td>
+	   
+	     <td width=35% class=subbody>AGUILAR, EDGAR A</td>
+	     <td class=head nowrap width=17%>Orig Booking Date</td>
+	     <td width=30% class=subbody>4/19/2014 9:11:00 AM</td></tr>
+	<tr><td>&nbsp;</td><td class=head>Address</td><td class=subbody>SAN RAFAEL CA</td>
+	<td class=head nowrap>Latest Charge Date </td>
+	<td class=subbody>4/23/2014 1:15:00 PM</td></tr>
+	<tr><td>&nbsp;</td><td class=head nowrap>Sex</td><td class=subbody>M
+
+	</td>
+	 <td class=head nowrap>Arrest Date</td>
+	 <td class=subbody nowrap>4/19/2014 6:37:00 AM</td>
+	</tr>
+	<tr><td>&nbsp;</td><td class=head nowrap>Date of Birth</td><td class=subbody>
+	10/5/1989</td>
+	 <td class=head nowrap>Arrest Agency</td>
+	 <td class=subbody>San Rafael PD</td>
+	</tr>
+	<!-- Newly added booking info -->
+	<tr><td>&nbsp;</td><td class=head nowrap>Occupation</td><td class=subbody>CONSTRUCTION
+
+		</td>
+		 <td class=head nowrap>Arrest Location</td>
+		 <td class=subbody nowrap>969 FRANCSICO BLVD E</td>
+	</tr>
+	<tr><td>&nbsp;</td><td class=head nowrap>Height</td><td class=subbody>6' 03"
+
+		</td>
+		 <td class=head nowrap>Hair Color</td>
+		 <td class=subbody nowrap>BRO</td>
+	</tr>
+	<tr><td>&nbsp;</td><td class=head nowrap>Weight</td><td class=subbody>250
+
+		</td>
+		 <td class=head nowrap>Eye Color</td>
+		 <td class=subbody nowrap>BRO</td>
+	</tr>
+
+	<tr><td>&nbsp;</td><td class=head nowrap>Jail Id</td><td class=subbody>P00196056
+
+				</td>
+	</tr>
+
+	 <tr><td>&nbsp;</td><td colspan=5><hr align=center width=100% size=1 color=008080></td></tr>
+
+	<tr><td>&nbsp;</td><td width=12%><font size="2" face="Arial, Helvetica, sans-serif"><b>Charges</b></font></td>
+	<td class=subbody>&nbsp;</td>
+	<td class=subbody>&nbsp;</td>
+	<td><font size="2" face="Arial, Helvetica, sans-serif"><b>Bail</b></font></td>
+	<td><font size="2" face="Arial, Helvetica, sans-serif"><b>Charge Authority</b></font></td>
+	</tr>
+	<tr><td>&nbsp;</td><td width=12% class=subbody nowrap>1203.2 PC</td>
+	<td class=subbody>Violation of Probation              </td>
+	<td class=subbody>M</font></td>
+	<td class=subbody>$0.00</font></td>
+	<td class=subbody>Open charges</td>
+	</tr>
+
+	<tr><td>&nbsp;</td><td width=12% class=subbody>10851(A) VC</td>
+	     <td class=subbody>Take vehicle w/o owners consent     </td>
+	      <td class=subbody>F</td>
+	     <td class=subbody>$25,000.00</td>
+	     <td class=subbody>Open charges</td>
+	 </tr>
+
+	<tr><td>&nbsp;</td><td width=12% class=subbody>466 PC</td>
+	     <td class=subbody>Possession burglary tools           </td>
+	      <td class=subbody>M</td>
+	     <td class=subbody></td>
+	     <td class=subbody>Open charges</td>
+	 </tr>
+
+	<tr><td>&nbsp;</td><td width=12% class=subbody>459 PC</td>
+	     <td class=subbody>Burglary                            </td>
+	      <td class=subbody>F</td>
+	     <td class=subbody></td>
+	     <td class=subbody>Open charges</td>
+	 </tr>
+
+	<tr><td>&nbsp;</td><td width=12% class=subbody>496 PC</td>
+	     <td class=subbody>Rcv/known stln property >$200       </td>
+	      <td class=subbody>F</td>
+	     <td class=subbody></td>
+	     <td class=subbody>Open charges</td>
+	 </tr>
+
+	<tr><td>&nbsp;</td><td width=12% class=subbody>496(A) PC</td>
+	     <td class=subbody>Receive known stolen property       </td>
+	      <td class=subbody>F</td>
+	     <td class=subbody>$15,000.00</td>
+	     <td class=subbody>Court order</td>
+	 </tr>
+
+	<tr><td>&nbsp;</td><td width=12% class=subbody>487(C) PC</td>
+	     <td class=subbody>Grand theft from person             </td>
+	      <td class=subbody>F</td>
+	     <td class=subbody>$15,000.00</td>
+	     <td class=subbody>Court order</td>
+	 </tr>
+
+	<tr><td>&nbsp;</td><td width=12% class=subbody>148(A)(1) PC</td>
+	     <td class=subbody>Obstructs/Resists Public Officer    </td>
+	      <td class=subbody>M</td>
+	     <td class=subbody>$5,000.00</td>
+	     <td class=subbody>Court order</td>
+	 </tr>
+
+	     <tr><td colspan=6 align=center><a class=bluelinkunder href="http://egovwebprod.marincounty.org/depts/MC/courtcal/bookinglog.cfm?name=AGUILAR, EDGAR A" class=bluelinkunder>View Court Appearance</a></td></tr>
+	   
+	<tr><td colspan=6><hr align=left width=100% size=3 color=008000></td></tr>
+	   
+	   <tr><td width=6%>&nbsp;</td><td class=head width=12%>Name</td>
+	   
+	     <td width=35% class=subbody>AGUILAR-GALVEZ, CARLOS</td>
+	     <td class=head nowrap width=17%>Orig Booking Date</td>
+	     <td width=30% class=subbody>5/1/2014 2:24:00 AM</td></tr>
+	<tr><td>&nbsp;</td><td class=head>Address</td><td class=subbody>NOVATO CA</td>
+	<td class=head nowrap>Latest Charge Date </td>
+	<td class=subbody>8/12/2014 11:19:00 PM</td></tr>
+	<tr><td>&nbsp;</td><td class=head nowrap>Sex</td><td class=subbody>M
+
+	</td>
+	 <td class=head nowrap>Arrest Date</td>
+	 <td class=subbody nowrap>5/1/2014 2:01:00 AM</td>
+	</tr>
+	<tr><td>&nbsp;</td><td class=head nowrap>Date of Birth</td><td class=subbody>
+	1/18/1989</td>
+	 <td class=head nowrap>Arrest Agency</td>
+	 <td class=subbody>Novato PD</td>
+	</tr>
+	<!-- Newly added booking info -->
+	<tr><td>&nbsp;</td><td class=head nowrap>Occupation</td><td class=subbody>LANDSCAPER
+
+		</td>
+		 <td class=head nowrap>Arrest Location</td>
+		 <td class=subbody nowrap>800 DIABLO AV</td>
+	</tr>
+	<tr><td>&nbsp;</td><td class=head nowrap>Height</td><td class=subbody>5' 07"
+
+		</td>
+		 <td class=head nowrap>Hair Color</td>
+		 <td class=subbody nowrap>BRO</td>
+	</tr>
+	<tr><td>&nbsp;</td><td class=head nowrap>Weight</td><td class=subbody>140
+
+		</td>
+		 <td class=head nowrap>Eye Color</td>
+		 <td class=subbody nowrap>BRO</td>
+	</tr>
+
+	<tr><td>&nbsp;</td><td class=head nowrap>Jail Id</td><td class=subbody>P00189055
+
+				</td>
+	</tr>
+
+	 <tr><td>&nbsp;</td><td colspan=5><hr align=center width=100% size=1 color=008080></td></tr>
+
+	<tr><td>&nbsp;</td><td width=12%><font size="2" face="Arial, Helvetica, sans-serif"><b>Charges</b></font></td>
+	<td class=subbody>&nbsp;</td>
+	<td class=subbody>&nbsp;</td>
+	<td><font size="2" face="Arial, Helvetica, sans-serif"><b>Bail</b></font></td>
+	<td><font size="2" face="Arial, Helvetica, sans-serif"><b>Charge Authority</b></font></td>
+	</tr>
+	<tr><td>&nbsp;</td><td width=12% class=subbody nowrap>459 PC</td>
+	<td class=subbody>Burglary                            </td>
+	<td class=subbody>F</font></td>
+	<td class=subbody>$0.00</font></td>
+	<td class=subbody>*Bench warrant</td>
+	</tr>
+
+	<tr><td>&nbsp;</td><td width=12% class=subbody>459 PC</td>
+	     <td class=subbody>Burglary                            </td>
+	      <td class=subbody>M</td>
+	     <td class=subbody></td>
+	     <td class=subbody>*Bench warrant</td>
+	 </tr>
+
+	<tr><td>&nbsp;</td><td width=12% class=subbody>490.5 PC</td>
+	     <td class=subbody>Petty thft retail merchandise       </td>
+	      <td class=subbody>M</td>
+	     <td class=subbody></td>
+	     <td class=subbody>*Bench warrant</td>
+	 </tr>
+
+	<tr><td>&nbsp;</td><td width=12% class=subbody>148 PC</td>
+	     <td class=subbody>Obstruct/Resists Public Officer     </td>
+	      <td class=subbody>M</td>
+	     <td class=subbody></td>
+	     <td class=subbody>Open charges</td>
+	 </tr>
+
+	<tr><td>&nbsp;</td><td width=12% class=subbody>243(B) PC</td>
+	     <td class=subbody>Battery on PO/Emergency Personnel   </td>
+	      <td class=subbody>M</td>
+	     <td class=subbody>$3,000.00</td>
+	     <td class=subbody>Open charges</td>
+	 </tr>
+
+	<tr><td>&nbsp;</td><td width=12% class=subbody>240 PC</td>
+	     <td class=subbody>Assault on PO/Emergency Personnel   </td>
+	      <td class=subbody>M</td>
+	     <td class=subbody></td>
+	     <td class=subbody>Open charges</td>
+	 </tr>
+
+	     <tr><td colspan=6 align=center><a class=bluelinkunder href="http://egovwebprod.marincounty.org/depts/MC/courtcal/bookinglog.cfm?name=AGUILAR-GALVEZ, CARLOS" class=bluelinkunder>View Court Appearance</a></td></tr>
+	   
+	<tr><td colspan=6><hr align=left width=100% size=3 color=008000></td></tr>
+	   
+	   <tr><td width=6%>&nbsp;</td><td class=head width=12%>Name</td>
+	   
+	     <td width=35% class=subbody>ALDANA, CARLOS</td>
+	     <td class=head nowrap width=17%>Orig Booking Date</td>
+	     <td width=30% class=subbody>8/27/2013 2:50:00 PM</td></tr>
+	<tr><td>&nbsp;</td><td class=head>Address</td><td class=subbody>MARIN CITY CA</td>
+	<td class=head nowrap>Latest Charge Date </td>
+	<td class=subbody>8/27/2013 5:37:00 PM</td></tr>
+	<tr><td>&nbsp;</td><td class=head nowrap>Sex</td><td class=subbody>M
+
+	</td>
+	 <td class=head nowrap>Arrest Date</td>
+	 <td class=subbody nowrap>8/24/2013 6:50:00 AM</td>
+	</tr>
+	<tr><td>&nbsp;</td><td class=head nowrap>Date of Birth</td><td class=subbody>
+	10/1/1990</td>
+	 <td class=head nowrap>Arrest Agency</td>
+	 <td class=subbody>Marin County Sheriff Department</td>
+	</tr>
+	<!-- Newly added booking info -->
+	<tr><td>&nbsp;</td><td class=head nowrap>Occupation</td><td class=subbody>LABOR
+
+		</td>
+		 <td class=head nowrap>Arrest Location</td>
+		 <td class=subbody nowrap>995 POTRERO AV</td>
+	</tr>
+	<tr><td>&nbsp;</td><td class=head nowrap>Height</td><td class=subbody>5' 06"
+
+		</td>
+		 <td class=head nowrap>Hair Color</td>
+		 <td class=subbody nowrap>BRO</td>
+	</tr>
+	<tr><td>&nbsp;</td><td class=head nowrap>Weight</td><td class=subbody>180
+
+		</td>
+		 <td class=head nowrap>Eye Color</td>
+		 <td class=subbody nowrap>BRO</td>
+	</tr>
+
+	<tr><td>&nbsp;</td><td class=head nowrap>Jail Id</td><td class=subbody>P00207208
+
+				</td>
+	</tr>
+
+	 <tr><td>&nbsp;</td><td colspan=5><hr align=center width=100% size=1 color=008080></td></tr>
+
+	<tr><td>&nbsp;</td><td width=12%><font size="2" face="Arial, Helvetica, sans-serif"><b>Charges</b></font></td>
+	<td class=subbody>&nbsp;</td>
+	<td class=subbody>&nbsp;</td>
+	<td><font size="2" face="Arial, Helvetica, sans-serif"><b>Bail</b></font></td>
+	<td><font size="2" face="Arial, Helvetica, sans-serif"><b>Charge Authority</b></font></td>
+	</tr>
+	<tr><td>&nbsp;</td><td width=12% class=subbody nowrap>187 PC</td>
+	<td class=subbody>Murder first degree                 </td>
+	<td class=subbody>F</font></td>
+	<td class=subbody>$0.00</font></td>
+	<td class=subbody>Open charges</td>
+	</tr>
+
+	<tr><td>&nbsp;</td><td width=12% class=subbody>597(A) PC</td>
+	     <td class=subbody>Cruelty to animals                  </td>
+	      <td class=subbody>F</td>
+	     <td class=subbody>$20,000.00</td>
+	     <td class=subbody>Open charges</td>
+	 </tr>
+
+	     <tr><td colspan=6 align=center><a class=bluelinkunder href="http://egovwebprod.marincounty.org/depts/MC/courtcal/bookinglog.cfm?name=ALDANA, CARLOS" class=bluelinkunder>View Court Appearance</a></td></tr>
+	   
+	<tr><td colspan=6><hr align=left width=100% size=3 color=008000></td></tr>
+	   
+	   <tr><td width=6%>&nbsp;</td><td class=head width=12%>Name</td>
+	   
+	     <td width=35% class=subbody>ALEAMOTUA, SIAOSI</td>
+	     <td class=head nowrap width=17%>Orig Booking Date</td>
+	     <td width=30% class=subbody>6/13/2014 7:50:00 AM</td></tr>
+	<tr><td>&nbsp;</td><td class=head>Address</td><td class=subbody>OAKLAND CA</td>
+	<td class=head nowrap>Latest Charge Date </td>
+	<td class=subbody>7/28/2014 1:20:00 PM</td></tr>
+	<tr><td>&nbsp;</td><td class=head nowrap>Sex</td><td class=subbody>M
+
+	</td>
+	 <td class=head nowrap>Arrest Date</td>
+	 <td class=subbody nowrap>6/13/2014 7:00:00 AM</td>
+	</tr>
+	<tr><td>&nbsp;</td><td class=head nowrap>Date of Birth</td><td class=subbody>
+	9/24/1992</td>
+	 <td class=head nowrap>Arrest Agency</td>
+	 <td class=subbody>Department of Corrections</td>
+	</tr>
+	<!-- Newly added booking info -->
+	<tr><td>&nbsp;</td><td class=head nowrap>Occupation</td><td class=subbody>ENTREPRENEUR
+
+		</td>
+		 <td class=head nowrap>Arrest Location</td>
+		 <td class=subbody nowrap>SAN QUENTIN STATE PRISON</td>
+	</tr>
+	<tr><td>&nbsp;</td><td class=head nowrap>Height</td><td class=subbody>5' 11"
+
+		</td>
+		 <td class=head nowrap>Hair Color</td>
+		 <td class=subbody nowrap>BLK</td>
+	</tr>
+	<tr><td>&nbsp;</td><td class=head nowrap>Weight</td><td class=subbody>250
+
+		</td>
+		 <td class=head nowrap>Eye Color</td>
+		 <td class=subbody nowrap>BRO</td>
+	</tr>
+
+	<tr><td>&nbsp;</td><td class=head nowrap>Jail Id</td><td class=subbody>P00210501
+
+				</td>
+	</tr>
+
+	 <tr><td>&nbsp;</td><td colspan=5><hr align=center width=100% size=1 color=008080></td></tr>
+
+	<tr><td>&nbsp;</td><td width=12%><font size="2" face="Arial, Helvetica, sans-serif"><b>Charges</b></font></td>
+	<td class=subbody>&nbsp;</td>
+	<td class=subbody>&nbsp;</td>
+	<td><font size="2" face="Arial, Helvetica, sans-serif"><b>Bail</b></font></td>
+	<td><font size="2" face="Arial, Helvetica, sans-serif"><b>Charge Authority</b></font></td>
+	</tr>
+	<tr><td>&nbsp;</td><td width=12% class=subbody nowrap>4501 PC</td>
+	<td class=subbody>Asst by prisoner                    </td>
+	<td class=subbody>F</font></td>
+	<td class=subbody>$0.00</font></td>
+	<td class=subbody>Court order</td>
+	</tr>
+
+	<tr><td>&nbsp;</td><td width=12% class=subbody>148 PC</td>
+	     <td class=subbody>Obstruct/Resists Public Officer     </td>
+	      <td class=subbody>M</td>
+	     <td class=subbody>$2,000.00</td>
+	     <td class=subbody>Open charges</td>
+	 </tr>
+
+	<tr><td>&nbsp;</td><td width=12% class=subbody>242 PC</td>
+	     <td class=subbody>Battery                             </td>
+	      <td class=subbody>M</td>
+	     <td class=subbody>$2,000.00</td>
+	     <td class=subbody>Open charges</td>
+	 </tr>
+
+	<tr><td>&nbsp;</td><td width=12% class=subbody>245(A)(4) PC</td>
+	     <td class=subbody>Assault likeley to cause GBI        </td>
+	      <td class=subbody>F</td>
+	     <td class=subbody></td>
+	     <td class=subbody>Court order</td>
+	 </tr>
+
+	     <tr><td colspan=6 align=center><a class=bluelinkunder href="http://egovwebprod.marincounty.org/depts/MC/courtcal/bookinglog.cfm?name=ALEAMOTUA, SIAOSI" class=bluelinkunder>View Court Appearance</a></td></tr>
+	<tr><td colspan=6><hr align=left width=100% size=3 color=008000></td></tr>
+	   
+	   <tr><td width=6%>&nbsp;</td><td class=head width=12%>Name</td>
+	   
+	     <td width=35% class=subbody>ZUKOSKY, SEAN DAVID</td>
+	     <td class=head nowrap width=17%>Orig Booking Date</td>
+	     <td width=30% class=subbody>7/25/2014 3:49:00 AM</td></tr>
+	<tr><td>&nbsp;</td><td class=head>Address</td><td class=subbody>SAN RAFAEL CA</td>
+	<td class=head nowrap>Latest Charge Date </td>
+	<td class=subbody>8/11/2014 2:20:00 PM</td></tr>
+	<tr><td>&nbsp;</td><td class=head nowrap>Sex</td><td class=subbody>M
+
+	</td>
+	 <td class=head nowrap>Arrest Date</td>
+	 <td class=subbody nowrap>7/25/2014 12:13:00 AM</td>
+	</tr>
+	<tr><td>&nbsp;</td><td class=head nowrap>Date of Birth</td><td class=subbody>
+	10/29/1970</td>
+	 <td class=head nowrap>Arrest Agency</td>
+	 <td class=subbody>San Rafael PD</td>
+	</tr>
+	<!-- Newly added booking info -->
+	<tr><td>&nbsp;</td><td class=head nowrap>Occupation</td><td class=subbody>FIRE FIGHTER
+
+		</td>
+		 <td class=head nowrap>Arrest Location</td>
+		 <td class=subbody nowrap>FIFTH ST AND A ST</td>
+	</tr>
+	<tr><td>&nbsp;</td><td class=head nowrap>Height</td><td class=subbody>5' 11"
+
+		</td>
+		 <td class=head nowrap>Hair Color</td>
+		 <td class=subbody nowrap>XXX</td>
+	</tr>
+	<tr><td>&nbsp;</td><td class=head nowrap>Weight</td><td class=subbody>180
+
+		</td>
+		 <td class=head nowrap>Eye Color</td>
+		 <td class=subbody nowrap>BLU</td>
+	</tr>
+
+	<tr><td>&nbsp;</td><td class=head nowrap>Jail Id</td><td class=subbody>P00211000
+
+				</td>
+	</tr>
+
+	 <tr><td>&nbsp;</td><td colspan=5><hr align=center width=100% size=1 color=008080></td></tr>
+
+	<tr><td>&nbsp;</td><td width=12%><font size="2" face="Arial, Helvetica, sans-serif"><b>Charges</b></font></td>
+	<td class=subbody>&nbsp;</td>
+	<td class=subbody>&nbsp;</td>
+	<td><font size="2" face="Arial, Helvetica, sans-serif"><b>Bail</b></font></td>
+	<td><font size="2" face="Arial, Helvetica, sans-serif"><b>Charge Authority</b></font></td>
+	</tr>
+	<tr><td>&nbsp;</td><td width=12% class=subbody nowrap>459 PC</td>
+	<td class=subbody>Burglary                            </td>
+	<td class=subbody>F</font></td>
+	<td class=subbody>$50,000.00</font></td>
+	<td class=subbody>Open charges</td>
+	</tr>
+
+	<tr><td>&nbsp;</td><td width=12% class=subbody>148(A)(1) PC</td>
+	     <td class=subbody>Obstructs/Resists Public Officer    </td>
+	      <td class=subbody>M</td>
+	     <td class=subbody></td>
+	     <td class=subbody>Open charges</td>
+	 </tr>
+
+	<tr><td>&nbsp;</td><td width=12% class=subbody>3056 PC</td>
+	     <td class=subbody>Parole violation felony             </td>
+	      <td class=subbody>F</td>
+	     <td class=subbody></td>
+	     <td class=subbody>*State hold</td>
+	 </tr>
+
+	<tr><td>&nbsp;</td><td width=12% class=subbody>3000.08(A) PC</td>
+	     <td class=subbody>Violation of supervised parole</td>
+	      <td class=subbody>F</td>
+	     <td class=subbody></td>
+	     <td class=subbody>Court order</td>
+	 </tr>
+
+	<tr><td colspan=6 align=center><a href="http://egovwebprod.marincounty.org/depts/MC/courtcal/bookinglog.cfm?name=ZUKOSKY, SEAN DAVID" class=bluelinkunder>View Court Appearance</a></td></tr>
+
+</table>
+
+
+
+
+<!---   Note: This is a continuation of an open cell,
+		started in the Top include.
+		That allows the content to be provided in the page
+		which calls Top and Bottom.
+--->
+<!-- *******************************************************
+	Commented out to reverse leftsubnav accommodation
+</td>
+			</tr>
+		  </table>
+     ********************************************************
+-->
+</td>
+			</tr>
+		  </table>
+      </td>
+    </tr>
+
+
+<link rel="stylesheet" href="/globals/marin.css" type="text/css">
+
+    <tr>
+
+    <td height="90" width="149" bgcolor="3A6691"><a href="/default.asp" target="_new"><img src="/siteimages_NEW/logo_blue_bottom.gif" width="130" height="111" align="bottom" alt="County Of Marin Home" border="0"></a></td>
+    <td height="90" width="100%" valign="bottom">
+
+	
+			<table width="600" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+	      		<td width="25"><img src="/SiteImages/shim.gif" width="25" height="1" alt=""></td>
+				<td align="left" class="subbody">
+				The contact for this page is:&nbsp;
+				<A HREF="mailto:Sheriff@marincounty.org" class="bluelinkunder">
+				<b>Sheriff@marincounty.org</b></a>
+				</td>
+			</tr>
+			<tr>
+				<td height="5">&nbsp;</td>
+				<td height="5">&nbsp;</td>
+			</tr>
+			</table>
+		
+
+
+
+	  	  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+
+        <td width="25"><img src="/SiteImages/shim.gif" width="25" height="1" alt=""></td>
+
+        <td nowrap width="100%"> <a href="/default.asp" class="bluebottomnav">
+          </a><a href="/default.asp" class="bluebottomnav">COUNTY
+          HOME&nbsp; </a> <span class="bluebottomnav"> | </span> <a href="/nav/ServiceList.cfm" class="bluebottomnav"></a><a href="/depts/BS/main/index.cfm" class="bluebottomnav">BOARD
+          OF SUPERVISORS <span class="bluebottomnav">| </span></a><span class="bluebottomnav"><a href="/sysApps/Contacts/SearchContacts.aspx" class="bluebottomnav">CONTACTS
+          </a>| </span> <a href="/depts/BS/main/index.cfm" class="bluebottomnav">&nbsp;</a><span class="bluebottomnav"><a href="/nav/OrgIndex.cfm" class="bluebottomnav">DEPARTMENTS&nbsp;</a></span><span class="bluebottomnav">
+          | </span> <span class="bluebottomnav">          <a href="/depts/hr/jobs/default.asp" class="bluebottomnav">JOB
+          POSTINGS</a>&nbsp;<span class="bluebottomnav">|</span>&nbsp;<a href="/sysApps/MyMarin/login.asp" class="bluebottomnav">
+          MY MARIN</a>&nbsp;<span class="bluebottomnav">|</span>&nbsp;<a href="" class="bluebottomnav" target="_blank">HELP</a><br>
+          </span><a href="/sysapps/Calendar/index.cfm" class="bluebottomnav"><span class="bluebottomnav">SERVICES &amp; INFORMATION</span>&nbsp;</a><span class="bluebottomnav">|</span><a href="/nav/NewsList.cfm" class="bluebottomnav">&nbsp;</a><a href="/sysapps/Calendar/index.cfm" class="bluebottomnav">CALENDAR&nbsp;</a><span class="bluebottomnav">|</span><a href="/nav/NewsList.cfm" class="bluebottomnav">&nbsp;COUNTY
+           NEWS</a> <span class="bluebottomnav"> |</span><a href="/nav/formlist.cfm" class="bluebottomnav">
+          </a><a href="/nav/formlist.cfm" class="bluebottomnav">
+          FORMS </a><span class="bluebottomnav"><span class="bluebottomnav"> <!---|</span><a href="/nav/Fulltext.html" class="bluebottomnav">
+          FULL TEXT SEARCH</a> <span class="bluebottomnav"> </span>|</span><span class="bluebottomnav"><font color="#009999">
+          </font></span>
+
+          <a href="http://www.marincounty.org/Main/Survey" class="bluebottomnav">GIVE
+          US FEEDBACK</a> --->&nbsp;
+
+	  <span class="bluebottomnav"> </span><br>
+          <span class="bluebottomnav">&copy; 2005 County of Marin | </span> <a href="/nav/misc/terms.cfm" class="bluebottomnav">Terms
+          &amp; Conditions</a> <span class="bluebottomnav"> | <a href="/nav/misc/partners.asp" class="bluebottomnav">Partners</a></span></td>
+          </tr>
+        </table>
+      </td>
+
+    </tr>
+</table>
+
+</body>
+</html>
