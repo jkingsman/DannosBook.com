@@ -59,7 +59,7 @@ $(function () {
             type: 'areaspline'
         },
         title: {
-            text: 'Average fruit consumption during one week'
+            text: 'Arrests per day'
         },
         legend: {
             layout: 'vertical',
@@ -72,16 +72,16 @@ $(function () {
             backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'
         },
         xAxis: {
-            categories: [@foreach($daily as $day){{ $day->day }}, @endforeach 0]
+            categories: [@foreach($daily as $day)'{{ $day->day }}', @endforeach]
         },
         yAxis: {
             title: {
-                text: 'Fruit units'
+                text: 'Arrests'
             }
         },
         tooltip: {
             shared: true,
-            valueSuffix: ' units'
+            valueSuffix: ' arrests'
         },
         credits: {
             enabled: false
@@ -93,7 +93,7 @@ $(function () {
         },
         series: [{
             name: 'Arrests',
-            data: [@foreach($daily as $day){{ $day->count }}, @endforeach 0]
+            data: [@foreach($daily as $day){{ $day->count }}, @endforeach]
         }]
     });
 });

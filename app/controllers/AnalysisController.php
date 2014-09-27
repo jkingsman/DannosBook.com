@@ -49,10 +49,11 @@ class AnalysisController extends BaseController {
 			
 	$daily = DB::table('bookees')
 			->select(DB::raw('count(*) as count, 
-					DAYOFYEAR(arrestdate) as day'
-					))
-			->groupBy(DB::raw('DAYOFYEAR(arrestdate)'))
-			->take(50)
+					DATE_FORMAT(latestchargedate, "%m/%d") as day
+					'))
+			->whereRaw('DATE(latestchargedate) > DATE_SUB(NOW(), INTERVAL 15 day)')
+			->groupBy(DB::raw('DATE(latestchargedate)'))
+			->orderBy(DB::raw('DATE(latestchargedate)'), 'desc')
 			->get();
 	
 	return View::make('web.analysis.frequency', array(
