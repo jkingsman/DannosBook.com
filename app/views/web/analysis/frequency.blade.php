@@ -6,82 +6,100 @@ Frequency Analysis
 
 @section('js')
 $(function () {
-    $('#hourlyavgcontainer').highcharts({
-        data: {
-            table: document.getElementById('hourlyavgdat')
-        },
+    $('#weekdailycontainer').highcharts({
         chart: {
             type: 'column'
         },
         title: {
-            text: ''
+            text: 'Average arrests by day'
         },
-        yAxis: {
-            allowDecimals: false,
-            title: {
-                text: 'Arrests'
-            }
-        },
+
         tooltip: {
-            formatter: function () {
-                return '<b>' + this.series.name + '</b><br/>' +
-                    this.point.y + ' ' + this.point.name.toLowerCase();
-            }
-        }
+            pointFormat: '<b>{point.y:,.0f}</b> arrests during {point.x}00'
+        },
+        xAxis: {
+            categories: [
+                 @foreach($weekdaily as $weekday)
+		       "{{ $weekday->day }}",
+		  @endforeach
+            ]
+        },
+        series: [{
+            name: 'Arrests',
+            data: [@foreach($weekdaily as $weekday){{ $weekday->count }}, @endforeach]
+        }]
     });
 });
 $(function () {
-    $('#weekdailycontainer').highcharts({
-        data: {
-            table: document.getElementById('weekdailydat')
-        },
+    $('#hourlyavgcontainer').highcharts({
         chart: {
             type: 'column'
         },
         title: {
-            text: ''
+            text: 'Average arrests by hour'
         },
-        yAxis: {
-            allowDecimals: false,
-            title: {
-                text: 'Arrests'
-            }
-        },
+
         tooltip: {
-            formatter: function () {
-                return '<b>' + this.series.name + '</b><br/>' +
-                    this.point.y + ' ' + this.point.name.toLowerCase();
-            }
-        }
+            pointFormat: '<b>{point.y:,.0f}</b> arrests during {point.x}00'
+        },
+        xAxis: {
+            categories: [
+                @foreach($hourly as $hour){{ $hour->ahour }}, @endforeach
+            ]
+        },
+        series: [{
+            name: 'Arrests',
+            data: [@foreach($hourly as $hour){{ $hour->count }}, @endforeach]
+        }]
     });
 });
 $(function () {
     $('#dailycontainer').highcharts({
-        data: {
-            table: document.getElementById('dailydat')
-        },
         chart: {
             type: 'areaspline'
         },
         title: {
-            text: ''
+            text: 'Average fruit consumption during one week'
+        },
+        legend: {
+            layout: 'vertical',
+            align: 'left',
+            verticalAlign: 'top',
+            x: 150,
+            y: 100,
+            floating: true,
+            borderWidth: 1,
+            backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'
+        },
+        xAxis: {
+            categories: [@foreach($daily as $day){{ $day->day }}, @endforeach 0]
         },
         yAxis: {
-            allowDecimals: false,
             title: {
-                text: 'Arrests'
+                text: 'Fruit units'
             }
         },
         tooltip: {
-            formatter: function () {
-                return '<b>' + this.series.name + '</b><br/>' +
-                    this.point.y + ' ' + this.point.name.toLowerCase();
+            shared: true,
+            valueSuffix: ' units'
+        },
+        credits: {
+            enabled: false
+        },
+        plotOptions: {
+            areaspline: {
+                fillOpacity: 0.5
             }
-        }
+        },
+        series: [{
+            name: 'Arrests',
+            data: [@foreach($daily as $day){{ $day->count }}, @endforeach 0]
+        }]
     });
 });
-@stop
 
+
+@stop
 @section('content')
 @if($highcharts=1)@endif
 <div class="container">
@@ -102,56 +120,5 @@ $(function () {
 		       
 	    </div>
       </div>
-</div>
-
-
-
-<table id="hourlyavgdat" style="display: none;">
-      <thead>
-	      <tr>
-		      <th></th>
-		      <th>Charges per Hour (as in 24hr time)</th>
-	      </tr>
-      </thead>
-      <tbody>
-      	  @foreach($hourly as $hour)
-	      <tr>
-		      <td>{{ $hour->ahour }}</td>
-		      <td>{{ $hour->count }}</td>
-	      </tr>
-	  @endforeach
-      </tbody>
-</table>
-<table id="weekdailydat" style="display: none;">
-      <thead>
-	      <tr>
-		      <th></th>
-		      <th>Charges per Day</th>
-	      </tr>
-      </thead>
-      <tbody>
-	  @foreach($weekdaily as $weekday)
-	      <tr>
-		      <td>{{ $weekday->day }}</}}</>
-		      <td>{{ $weekday->count }}</td>
-	      </tr>
-	  @endforeach
-      </tbody>
-</table>
-<table id="dailydat" style="display: none;">
-      <thead>
-	      <tr>
-		      <th></th>
-		      <th>Charges per Day</th>
-	      </tr>
-      </thead>
-      <tbody>
-	  @foreach($daily as $day)
-	      <tr>
-		      <td>{{ $day->day }}</td>
-		      <td>{{ $day->count }}</td>
-	      </tr>
-	  @endforeach
-      </tbody>
-</table>
+</div>      
 @stop
