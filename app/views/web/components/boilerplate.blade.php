@@ -79,8 +79,10 @@
 
 	@yield('content')
 
-<hr>
+
       <center><footer>
+      &nbsp;
+      <hr>
         <p>
           Formatting & Display &copy; Danno's Book {{ date('Y') }} | <a href="/cya/terms">Terms and Conditions</a>
         </p>
