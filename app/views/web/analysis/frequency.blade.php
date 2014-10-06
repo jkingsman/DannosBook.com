@@ -114,8 +114,7 @@ $(function () {
 			<div id="weekdailycontainer"></div>
 		  <h3>Breakdown by Hour (Avg)</h3>
 			<div id="hourlyavgcontainer"></div>
-		  <h3>Daily Bookings (50 day running)</h3>
-			This is going to display weird until the scraper has been running for 50 days.
+		  <h3>Daily Bookings (15 day running)</h3>
 			<div id="dailycontainer"></div>
 		       
 	    </div>
