@@ -51,7 +51,7 @@ class AnalysisController extends BaseController {
 			->select(DB::raw('count(*) as count, 
 					DATE_FORMAT(latestchargedate, "%m/%d") as day
 					'))
-			->whereRaw('DATE(latestchargedate) > DATE_SUB(NOW(), INTERVAL 15 day)')
+			->whereRaw('DATE(latestchargedate) > DATE_SUB(NOW(), INTERVAL 30 day)')
 			->groupBy(DB::raw('DATE(latestchargedate)'))
 			->orderBy(DB::raw('DATE(latestchargedate)'), 'asc')
 			->get();
