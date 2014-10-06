@@ -114,7 +114,7 @@ $(function () {
 			<div id="weekdailycontainer"></div>
 		  <h3>Breakdown by Hour (Avg)</h3>
 			<div id="hourlyavgcontainer"></div>
-		  <h3>Daily Bookings (15 day running)</h3>
+		  <h3>Daily Bookings (30 day running)</h3>
 			<div id="dailycontainer"></div>
 		       
 	    </div>
