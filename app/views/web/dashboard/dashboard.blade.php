@@ -33,7 +33,7 @@ function getStatus()
       </div>
 	    <div class="row">
              <div class="col-md-12">
-		  <h3>Most Recent Charges <a href="http://dannosbook.com/search/recent">View Last 50</a></h3>
+		  <h3>Most Recent Charges (<a href="http://dannosbook.com/search/recent">View Last 50</a>)</h3>
 			<div class="table-responsive">
 			      <table class="table">
 				    <tbody>
