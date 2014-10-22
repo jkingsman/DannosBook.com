@@ -38,8 +38,10 @@ class ScrapeLoadCommand extends Command {
 	public function fire()
 	{
 		if(Cache::get('automated', false)){
-			$this->line('Already running; quiting.');
-			return;
+			//it's already running; cancel it. we're going to start again.
+			//Note that this requires your cron (or however you intervalize this command)
+			//to give the scrap command enough time to run before you call it again.
+			Artisan::call('danno:resetcommand');
 		}
 
 		/*
