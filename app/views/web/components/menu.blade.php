@@ -32,6 +32,9 @@
 	<li>
 	  {{ HTML::link(URL::action('AnalysisController@getFrequency'), 'Frequency Analysis') }}
 	</li>
+	<li>
+	  {{ HTML::link(URL::action('AnalysisController@getCrimes'), 'Crime Analysis') }}
+	</li>
       </ul>
     </li>      
     </li>

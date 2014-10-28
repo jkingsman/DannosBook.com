@@ -63,5 +63,57 @@ class AnalysisController extends BaseController {
 	));
 	
     }
+    
+    public function getCrimes() {
+	$topCrimes = DB::table('charges')
+			->select(DB::raw('count(*) as crimeCount, 
+					charge,
+					description
+					'))
+			->groupBy('charge')
+			->orderBy('crimeCount', 'desc')
+			->take(10)
+			->get();
+			
+			
+	$crimeOccuptations = DB::table('bookees')
+			->select(DB::raw('count(*) as count,
+					 occupation
+					'))
+			->where('occupation', '!=', '')
+			->groupBy('occupation')
+			->orderBy('count', 'desc')
+			->take(10)
+			->get();
+			
+	$location24Hr = DB::table('bookees')
+			->select(DB::raw('count(*) as count,
+					 arrestlocation
+					'))
+			->whereRaw('bookingdate >= now() - INTERVAL 1 DAY')
+			->groupBy('bookingdate')
+			->orderBy('count', 'desc')
+			->get();
+			
+	$randomOneOffs = DB::table('charges')
+			->select(DB::raw('count(*) as count,
+					 charge,
+					 description,
+					 bookee_id
+					'))
+			->groupBy('charge')
+			->orderBy(DB::raw('count ASC, RAND()'))
+			->take(10)
+			->get();
+			
+	
+	return View::make('web.analysis.crimes', array(
+	    'topCrimes' => $topCrimes,
+	    'crimeOccupations' => $crimeOccuptations,
+	    'location24Hr' => $location24Hr,
+	    'randomOneOffs' => $randomOneOffs,
+	));
+	
+    }
 }
 ?>

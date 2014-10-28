@@ -19,7 +19,6 @@ class SuspectController extends BaseController {
 	    return Redirect::to('/dashboard')->with('failure', 'No suspect with that ID.');
 	}
 	
-	
 	$birthday = new DateTime($suspect->birthdate);
 	$interval = $birthday->diff(new DateTime);
 	$yearsold = $interval->y;
@@ -29,6 +28,19 @@ class SuspectController extends BaseController {
 	    'charges' => $charges,
 	    'yearsold' => $yearsold,
 	));
+    }
+    
+    //look up a suspect by their charge ID
+    public function getCharge($id=1) {
+	$charge = Charge::find($id);
+	
+	if(!$charge){
+	    return Redirect::to('/dashboard')->with('failure', 'No suspect with a charge that matched that ID.');
+	}
+	else{
+	    return Redirect::to('/suspect/view/' . $charge->bookee_id);
+	}
+	
     }
     
     public function getDeletecharge($id) {
