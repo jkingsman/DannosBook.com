@@ -114,7 +114,8 @@ $(function () {
 			<div id="weekdailycontainer"></div>
 		  <h3>Breakdown by Hour (Avg)</h3>
 			<div id="hourlyavgcontainer"></div>
-		  <h3>Daily Bookings (30 day running)</h3>
+		  <h3>Daily Bookings (60 day running)</h3>
+			Note that uncharacteristic dips can be caused by a stalled scrape job missing a day or two. Should be rectified as of 10/22/14 (see <a href="https://github.com/jkingsman/DannosBook.com/commit/e870f481f3b7d0fdb3b99ef6998c0161b2107761?diff=unified">GitHub</a> for patch that fixes stalled jobs).
 			<div id="dailycontainer"></div>
 		       
 	    </div>
