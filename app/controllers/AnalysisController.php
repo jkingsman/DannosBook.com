@@ -40,12 +40,28 @@ class AnalysisController extends BaseController {
 			->groupBy(DB::raw('HOUR(arrestdate)'))
 			->get();
 			
-	$weekdaily = DB::table('bookees')
-			->select(DB::raw('count(*) as count, 
-					DAYNAME(arrestdate) as day'
-					))
-			->groupBy(DB::raw('DAYNAME(arrestdate)'))
-			->get();
+	$dailyFM = DB::select("
+		    SELECT m.day, m.m, f.f FROM
+			(SELECT
+			    count(*) as m, DAYNAME(sentencetime) as day
+			FROM
+			    `charges`
+			WHERE
+			    type = 'M'
+			GROUP BY day) m
+			
+			JOIN(SELECT
+			    count(*) as f, DAYNAME(sentencetime) as day
+			FROM
+			    `charges`
+			WHERE
+			    type = 'F'
+			
+			GROUP BY day) f
+			
+			on f.day = m.day
+			ORDER BY FIELD(m.day, 'SUNDAY', 'MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY', 'SATURDAY')	 
+		");	
 			
 	$daily = DB::table('bookees')
 			->select(DB::raw('count(*) as count, 
@@ -58,7 +74,7 @@ class AnalysisController extends BaseController {
 	
 	return View::make('web.analysis.frequency', array(
 	    'hourly' => $hourly,
-	    'weekdaily' => $weekdaily,
+	    'dailyFM' => $dailyFM,
 	    'daily' => $daily,
 	));
 	

@@ -34,40 +34,38 @@ function getStatus()
 	    <div class="row">
              <div class="col-md-12">
 		  <h3>Most Recent Charges (<a href="http://dannosbook.com/search/recent">View Last 50</a>)</h3>
-			<div class="table-responsive">
-			      <table class="table">
-				    <tbody>
-					  @foreach($tenrecents as $recent)
-						<tr class="info">
-						<?php
-						      $birthday = new DateTime($recent->birthdate);
-						      $interval = $birthday->diff(new DateTime);
-						      $yearsold = $interval->y;
-						?>
-						    <td>{{ $recent->arrestdate }}</td>
-						    <td><a href="{{ URL::action('SuspectController@getView', array('id'=>$recent->id)) }}">{{ Privacylib::privName($recent->name) }}</a> ({{ $yearsold }} years old)</td>
-						    <td>{{ Privacylib::stdCase($recent->occupation) }}</td>
-						    <td colspan="2">Arrested at {{ Privacylib::stdCase($recent->arrestlocation) }}</td>
+		  <div class="table-responsive">
+			<table class="table">
+			      <tbody>
+				    @foreach($tenrecents as $recent)
+					  <tr class="info">
+					  <?php
+						$birthday = new DateTime($recent->birthdate);
+						$interval = $birthday->diff(new DateTime);
+						$yearsold = $interval->y;
+					  ?>
+					      <td>{{ $recent->arrestdate }}</td>
+					      <td><a href="{{ URL::action('SuspectController@getView', array('id'=>$recent->id)) }}">{{ Privacylib::privName($recent->name) }}</a> ({{ $yearsold }} years old)</td>
+					      <td>{{ Privacylib::stdCase($recent->occupation) }}</td>
+					      <td colspan="2">Arrested at {{ Privacylib::stdCase($recent->arrestlocation) }}</td>
+					  </tr>
+					  @foreach($recent->charge as $singlecharge)
+						<tr>
+						      <td></td>
+						      <td colspan="2">{{ $singlecharge->description }}</td>
+						      <td class="{{ Privacylib::crimeTypeToBootstrap($singlecharge->type) }}">{{ Privacylib::crimeType($singlecharge->type) }}</td>
+						      <td>{{ Privacylib::bailFormat($singlecharge->bail) }}</td>
 						</tr>
-						@foreach($recent->charge as $singlecharge)
-						      <tr>
-							    <td></td>
-							    <td colspan="2">{{ $singlecharge->description }}</td>
-							    <td class="{{ Privacylib::crimeTypeToBootstrap($singlecharge->type) }}">{{ Privacylib::crimeType($singlecharge->type) }}</td>
-							    <td>{{ Privacylib::bailFormat($singlecharge->bail) }}</td>
-						      </tr>
-						@endforeach
 					  @endforeach
-				    </tbody>
-			      </table>
-			</div>
-			
+				    @endforeach
+			      </tbody>
+			</table>
+		  </div>
 	     </div>
     </div>
       <div class="row">
 	    <div class="col-md-6">
 		 <h3>Weighted Worst Alleged Offenders <a href="{{ URL::action('AnalysisController@getCounts') }}">View All</a>	</h3>
-		       <hr />
 		       <table class="table table-striped">
 			     <thead>
 				   <tr class="info"> 
@@ -94,7 +92,6 @@ function getStatus()
 		  <div class="row">
 			<div class="col-md-12">
 			      <h3>Extremes</h3>
-				    <hr />
 				    <table class="table table-striped">
 					  <tbody>
 						<tr> 
@@ -127,6 +124,9 @@ function getStatus()
 						      <td>{{ Privacylib::bailFormat($topbail->totbail) }}</td>
 						</tr>
 						@endforeach
+						<tr>
+						      <td colspan="3">{{ $bookeeCount }} suspects with {{ $chargeCount }} charges on record since 8/27/2014</td>
+						</tr>
 					  </tbody>
 					</table>
 				    

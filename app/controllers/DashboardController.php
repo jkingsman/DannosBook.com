@@ -73,6 +73,14 @@ class DashboardController extends BaseController {
 		->take(5)
 		->with('charge')
 		->get();
+		
+	$tenrecents = Bookee::orderBy('bookingdate', 'desc')
+		->take(5)
+		->with('charge')
+		->get();
+		
+	$bookeeCount = Bookee::count();
+	$chargeCount = Charge::count();
 	
 	return View::make('web.dashboard.dashboard', array(
 	    'tenrecents' => $tenrecents,
@@ -83,6 +91,9 @@ class DashboardController extends BaseController {
 	    'tallest' => $tallest,
 	    'shortest' => $shortest,
 	    'topbails' => $topbails,
+	    
+	    'bookeeCount' => $bookeeCount,
+	    'chargeCount' => $chargeCount,
 	));
 	
     }
