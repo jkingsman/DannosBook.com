@@ -110,7 +110,21 @@ class AnalysisController extends BaseController {
 			->groupBy('bookingdate')
 			->orderBy('count', 'desc')
 			->get();
-			
+	
+	$locationTop = DB::table('bookees')
+			->select(DB::raw('count(*) as count,
+					 arrestlocation
+					'))
+			->whereRaw('arrestlocation NOT LIKE "%jail%"')
+			->whereRaw('arrestlocation NOT LIKE "%mcj%"')
+			->whereRaw('arrestlocation NOT LIKE "%rccc%"')
+			->whereRaw('arrestlocation NOT LIKE "%remand%"')
+			->whereRaw('arrestlocation != ""')
+			->groupBy('arrestlocation')
+			->orderBy('count', 'desc')
+			->take(10)
+			->get();
+
 	$randomOneOffs = DB::table('charges')
 			->select(DB::raw('count(*) as count,
 					 charge,
@@ -122,12 +136,22 @@ class AnalysisController extends BaseController {
 			->take(10)
 			->get();
 			
+	$locationHome = DB::table('bookees')
+			->select(DB::raw('count(*) as count,
+					 address
+					'))
+			->groupBy('address')
+			->orderBy('count', 'desc')
+			->take(10)
+			->get();
 	
 	return View::make('web.analysis.crimes', array(
 	    'topCrimes' => $topCrimes,
 	    'crimeOccupations' => $crimeOccuptations,
 	    'location24Hr' => $location24Hr,
+	    'locationTop' => $locationTop, 
 	    'randomOneOffs' => $randomOneOffs,
+	    'locationHome' => $locationHome,
 	));
 	
     }
