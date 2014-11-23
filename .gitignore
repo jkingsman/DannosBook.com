@@ -9,3 +9,4 @@ Thumbs.db
 /app/config/database.php
 /app/config/app.php
 /app/storage
+/app/config/packages/aloha/twilio/twilio.php
