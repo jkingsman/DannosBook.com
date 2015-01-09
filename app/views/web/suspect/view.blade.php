@@ -1,7 +1,7 @@
 @extends('web.components.boilerplate')
 
 @section('title')
-Suspect Data: {{ Privacylib::privName($suspect->name) }}     
+{{ Privacylib::privName($suspect->name) }} Data
 @stop
 
 @section('content')

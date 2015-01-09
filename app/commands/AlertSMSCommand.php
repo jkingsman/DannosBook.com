@@ -43,7 +43,8 @@ class AlertSMSCommand extends Command {
 			$ids = App::make('SearchController')->getSearchalerts($alert->id);
 			
 			foreach($ids as $id){
-				Twilio::message('+1' . $alert->phonenumber, 'A suspect has just been booked matching your "' . $alert->alertname . '" alert: http://dannosbook.com/suspect/view/' . $id);
+				$suspect = Bookee::find($id);
+				Twilio::message('+1' . $alert->phonenumber, 'A suspect has just been booked matching your "' . $alert->alertname . '" alert: ' . $suspect->name .  '; http://dannosbook.com/suspect/view/' . $id);
 			}
 			
 			$alert->touch();
