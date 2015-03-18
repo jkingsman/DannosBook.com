@@ -89,7 +89,8 @@ class BookingList {
     }
     
     //returns data for the person identified by $name
-    public function getDataByName($name){	
+    public function getDataByName($name){
+	sleep(1);
 	$personData = array();
 	$chargeData = array();
 	
