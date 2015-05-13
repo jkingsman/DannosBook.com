@@ -186,6 +186,9 @@ class SearchController extends BaseController {
 	    ->where('bookingdate', '>=', Input::get('minbooking'))
 	    ->where('bookingdate', '<=', Input::get('maxbooking'))
 	    
+	    ->where('latestchargedate', '>=', Input::get('minlatestcharge'))
+	    ->where('latestchargedate', '<=', Input::get('maxlatestcharge'))
+	    
 	    ->where('arrestagency', 'like', '%' . Input::get('arrestagency') . '%')
 	    ->where('arrestlocation', 'like', '%' . Input::get('arrestloc') . '%')
 	    
