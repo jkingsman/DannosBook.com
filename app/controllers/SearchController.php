@@ -3,46 +3,46 @@
 class SearchController extends BaseController {
     
     public function __construct() {
-	$this->beforeFilter('csrf', array('on'=>'post'));
+		$this->beforeFilter('csrf', array('on'=>'post'));
     }
     
     public function getIndex() {
-	return View::make('web.search.search');
+		return View::make('web.search.search');
     }
     
-    public function getRecent() {
-	$recents = Bookee::orderBy('bookingdate', 'desc')
-		->take(50)
-		->with('charge')
-		->get();
-	return View::make('web.search.recent', array(
-	    'recents' => $recents,
-	));
+    public function getRecent($count = 50) {
+		$recents = Bookee::orderBy('bookingdate', 'desc')
+			->take($count)
+			->with('charge')
+			->get();
+		return View::make('web.search.recent', array(
+			'recents' => $recents,
+		));
     }
     
     public function getAlert() {
-	return View::make('web.search.addalert');
+		return View::make('web.search.addalert');
     }
     
     public function getAlertlist() {
-	$alerts = Alert::where('owner', '=', Auth::user()->id)
-	    ->get();
-	
-	return View::make('web.search.listalert', array(
-		'alerts' => $alerts,
-	    ));
+		$alerts = Alert::where('owner', '=', Auth::user()->id)
+			->get();
+		
+		return View::make('web.search.listalert', array(
+			'alerts' => $alerts,
+			));
     }
     
     public function getDelalert($id) {
-	$alert = Alert::find($id);
-	
-	if($alert->owner == Auth::user()->id){
-	    $alert->delete();
-	    return Redirect::to('/search/alertlist')->with('success', 'Alert deleted.');
-	}
-	else{
-	    return Redirect::to('/search/alertlist')->with('failure', 'Not permitted.');
-	}
+		$alert = Alert::find($id);
+		
+		if($alert->owner == Auth::user()->id){
+			$alert->delete();
+			return Redirect::to('/search/alertlist')->with('success', 'Alert deleted.');
+		}
+		else{
+			return Redirect::to('/search/alertlist')->with('failure', 'Not permitted.');
+		}
     }
     
     public function postAlert() {
